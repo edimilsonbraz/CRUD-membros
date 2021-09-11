@@ -28,15 +28,63 @@ header {
   box-shadow: 0 1px 2px #CCC;
 }
 
+/* FIELDSET */
+fieldset {
+  /* border: 0; */
+}
+fieldset.grupo .campo {
+  float: left;
+  margin-right: 1em;
+}
+
+label {
+  font-size: 18px;
+}
+
+input, select, button {
+  border-radius: 5px;
+}
+
+/*  */
+.campo input {
+  width: 100%;
+  padding: 8px;
+}
+/* .sexo label {
+  margin-bottom: 0.2em;
+  /* display: block; */
+} */
+
+/* INPUT CHECKT */
+#check {
+  display: inline-block;
+}
+#check input {
+  margin-left: 8px;
+}
+
 form {
   background: rgba(255, 255, 255, 0.03);
 
   width: 100%;
-  max-width: 500px;
+  max-width: 940px;
 
-  
+  margin: 82px auto;
+  padding: 32px 64px;
+
+  display: flex;
+  flex-direction: column;
 }
 
+div.campo{
+  margin-bottom: 24px;
+  position: relative;
+}
+
+
+
+
+/* FOOTER */
 
 footer {
   background-color: violet;
