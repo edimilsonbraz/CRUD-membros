@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fd951f;
+  --bg-color: #130f0d;
+  --text-color: #f0f0f5;
+  --light-color: rgba(255, 255, 255, 0.04);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Karla', sans-serif;
+  background-color: #130f0d;
+  color: #f0f0f5;
+}
+
+header {
+  background-color: var(--primary-color);
+  height: 90px;
+  text-align: center;
+  line-height: 70px;
+  box-shadow: 0 1px 2px #CCC;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.03);
+
+  width: 100%;
+  max-width: 500px;
+
+  
+}
+
+
+footer {
+  background-color: violet;
+}
