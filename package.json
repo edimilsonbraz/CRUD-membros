@@ -5,7 +5,6 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon . "
-    
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,8 @@
   },
   "homepage": "https://github.com/edimilsonbraz/CRUD-membros#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
