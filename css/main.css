@@ -15,6 +15,24 @@
 body {
   font-family: 'Karla', sans-serif;
   background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+  
+}
+
+/* BOX */
+.box {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 15px;
+  width: 20%;
+}
+
+fieldset {
+  padding: 4px;
 }
 
 input.inputUser {
@@ -23,15 +41,24 @@ input.inputUser {
   border: none;
   border-bottom: 1px solid white;
   outline: none;
-  color: #fff;
+  color: white;
   font-size: 15px;
   width: 100%;
   letter-spacing: 2px;
 }
 
-input.inputUser:focus ~ .labelInput,
+.labelInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.inputUser:focus ~ .labelInput,
 .inputUser:valid ~ .labelInput {
   top: -20px;
+  font-size: 12px;
   color: dodgerblue;
 }
 
@@ -44,37 +71,41 @@ legend {
   border-radius: 8px;
 }
 
-.labelInput {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  transition: .5s;
-}
-
 
 .inputBox {
   position: relative;
 }
 
-
-/* BOX */
-.box {
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 15px;
-  border-radius: 15px;
-  width: 20%;
+#data_nascimento {
+  border: none;
+  padding: 8px;
+  font-size: 15px;
 }
+.data_nascimento {
+  display: block;
+  margin-top: 18px ;
+}
+
+.genero {
+  display: block;
+}
+
+#submit {
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(to right, rgb(0, 92, 197), rgb(90, 20, 220));
+  width: 100%;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  /* margin: 4px; */
+}
+
+#submit:hover {
+  background-image: linear-gradient(to right, rgb(0, 80, 172), rgb(80, 19, 195));
+}
+
 
 /* FOOTER */
 
-footer {
-  background-color: violet;
-  position: relative;
-  margin-bottom: 0;
-}

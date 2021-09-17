@@ -44,20 +44,23 @@
             <label for="telefone" class="labelInput">Telefone</label>
           </div>
 
-          <p>Sexo:</p>
-          <input type="radio" name="genero" id="feminino" value="feminino" required>
-          <label for="feminino">Feminino</label>
+          <div class="genero">
+            <p>Sexo:</p>
+            <input type="radio" name="genero" id="feminino" value="feminino" required>
+            <label for="feminino">Feminino</label><br>
 
-          <input type="radio" name="genero" id="masculino" value="masculino" required>
-          <label for="masculino">Masculino</label>
+            <input type="radio" name="genero" id="masculino" value="masculino" required>
+            <label for="masculino">Masculino</label><br>
 
-          <input type="radio" name="genero" id="outro" value="outro" required>
-          <label for="outro">Outro</label>
-
-          <div class="inputBox">
-            <label for="data_nascimento"><b>Data de Nascimento</b></label>
+            <input type="radio" name="genero" id="outro" value="outro" required>
+            <label for="outro">Outro</label><br>
+          </div>
+          
+          <div>
+            <label for="data_nascimento" class="data_nascimento"><b>Data de Nascimento</b></label>
             <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
           </div>
+
           <div class="inputBox">
             <input type="text" name="cidade" id="cidade" class="inputUser" required>
             <label for="cidade" class="labelInput">Cidade</label>
@@ -81,8 +84,8 @@
     <!-- FIM Form -->
   </main>
 
-  <footer>
+  <!-- <footer>
     <p>Edimilson Braz | 2021</p>
-  </footer>
+  </footer> -->
 </body>
 </html>
