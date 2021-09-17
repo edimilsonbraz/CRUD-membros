@@ -18,150 +18,71 @@
 </head>
 <body>
   <header>
-    <h1 class="header-title">Cadastro de Membros | AdPertencer</h1>
     <h3>Campus Samambaia</h3>
   </header>
+
   <main>
-    <button type="button">Cadastrar Membros</button>
+    
+    <!-- INICIO Form -->
+    <div class="box">
+      <form action="" method="POST">
+        <fieldset>
+          <legend><b>Cadastro de Membros</b></legend>
+          <br>
+          <div class="inputBox">
+            <input type="text" name="nome" id="nome" class="inputUser" required>
+            <label for="nome" class="labelInput">Nome Completo</label>
+          </div>
 
-    <!-- Inicio Form -->
-    <form action="" method="POST">
-      <fieldset class="grupo">
-        <div class="campo">
-          <label for="">Nome Completo</label>
-          <input required type="text" name="nome" id="nome" >
-        </div>
+          <div class="inputBox">
+            <input type="text" name="email" id="email" class="inputUser" required>
+            <label for="email" class="labelInput">Email</label>
+          </div>
 
-        <div class="campo">
-          <label for="">Data de Nascimento</label>
-          <input type="date" name="" id="">
-        </div>
+          <div class="inputBox">
+            <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+            <label for="telefone" class="labelInput">Telefone</label>
+          </div>
 
-        <div class="campo sexo" id="check">
-          <label id="">Sexo</label>
-            <label>
-              <input type="radio" name="" value="">Masculino
-            </label>
-            <label>
-              <input type="radio" name="" value="">Feminino
-            </label>
-        </div>
+          <p>Sexo:</p>
+          <input type="radio" name="genero" id="feminino" value="feminino" required>
+          <label for="feminino">Feminino</label>
 
-        <div class="campo">
-          <label for="">Estado Civil</label>
-          <input type="text" name="" id="">
-        </div>
+          <input type="radio" name="genero" id="masculino" value="masculino" required>
+          <label for="masculino">Masculino</label>
 
-        <div class="campo">
-          <label for="">Nome do pai</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
+          <input type="radio" name="genero" id="outro" value="outro" required>
+          <label for="outro">Outro</label>
 
-        <div class="campo">
-          <label for="">Nome da mãe</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
+          <div class="inputBox">
+            <label for="data_nascimento"><b>Data de Nascimento</b></label>
+            <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
+          </div>
+          <div class="inputBox">
+            <input type="text" name="cidade" id="cidade" class="inputUser" required>
+            <label for="cidade" class="labelInput">Cidade</label>
+          </div>
 
-        <div class="campo">
-          <label for="">Nascionalidade</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
+          <div class="inputBox">
+            <input type="text" name="estado" id="estado" class="inputUser" required>
+            <label for="estado" class="labelInput">Estado</label>
+          </div>
 
-        <div class="campo">
-          <label for="">Naturalidade</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">UF</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
+          <div class="inputBox">
+            <input type="text" name="endereco" id="endereco" class="inputUser" required>
+            <label for="endereco" class="labelInput">Endereço</label>
+          </div>
 
-        <div class="campo">
-          <label for="">Cônjuge</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-
-        <div class="campo">
-          <label for="">CPF</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-
-        <div class="campo">
-          <label for="">RG</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">Orgão Expedidor</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">UF</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">Data de Expedição</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">Endereço</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">Setor/Bairro</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">Cidade</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">E-mail</label>
-          <input type="email" name="" id="" required>
-        </div>
-        <div class="campo">
-          <label for="">Telefone Fixo</label>
-          <input type="text" name="" id="" >
-        </div>
-        <div class="campo">
-          <label for="">Celular</label>
-          <input type="text" name="" id="">
-        </div>
-        <div class="campo">
-          <label for="">Data de Batismo</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-        <div class="campo">
-          <label for="">Local do Batismo</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-
-        <div class="campo">
-          <label for="">Data Ordenação Eclesiastica</label>
-          <input type="text" name="" id="" placeholder="">
-        </div>
-
-        <div class="campo">
-          <label for="">Cargo</label>
-            <select name="" id="cargo">
-              <option selected disabled value="">Selecione...</option>
-              <option value="">Cooperador</option>
-              <option value="">Diácono/Diaconisa</option>
-              <option value="">Presbítero</option>
-              <option value="">Evangelísta</option>
-              <option value="">Missionário(a)</option>
-              <option value="">Pastor(a)</option>
-            </select>
-        </div>
-
-
-
-        <button type="submit">Enviar</button>
-      </fieldset>
-
-    </form>
+          
+          <input type="submit" name="submit" id="submit">
+        </fieldset>
+      </form>
+    </div>
+    <!-- FIM Form -->
   </main>
+
   <footer>
-    footer
+    <p>Edimilson Braz | 2021</p>
   </footer>
 </body>
 </html>

@@ -11,81 +11,70 @@
   --light-color: rgba(255, 255, 255, 0.04);
 }
 
+
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   font-family: 'Karla', sans-serif;
-  background-color: #130f0d;
-  color: #f0f0f5;
+  background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
 }
 
-header {
-  background-color: var(--primary-color);
-  height: 90px;
+input.inputUser {
+  margin-bottom: 30px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+input.inputUser:focus ~ .labelInput,
+.inputUser:valid ~ .labelInput {
+  top: -20px;
+  color: dodgerblue;
+}
+
+
+legend {
+  border: 1px solid dodgerblue;
+  padding: 10px;
   text-align: center;
-  line-height: 70px;
-  box-shadow: 0 1px 2px #CCC;
+  background-color: dodgerblue;
+  border-radius: 8px;
 }
 
-/* FIELDSET */
-fieldset {
-  /* border: 0; */
-}
-fieldset.grupo .campo {
-  float: left;
-  margin-right: 1em;
-}
-
-label {
-  font-size: 18px;
+.labelInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: .5s;
 }
 
-input, select, button {
-  border-radius: 5px;
-}
 
-/*  */
-.campo input {
-  width: 100%;
-  padding: 8px;
-}
-/* .sexo label {
-  margin-bottom: 0.2em;
-  /* display: block; */
-} */
-
-/* INPUT CHECKT */
-#check {
-  display: inline-block;
-}
-#check input {
-  margin-left: 8px;
-}
-
-form {
-  background: rgba(255, 255, 255, 0.03);
-
-  width: 100%;
-  max-width: 940px;
-
-  margin: 82px auto;
-  padding: 32px 64px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-div.campo{
-  margin-bottom: 24px;
+.inputBox {
   position: relative;
 }
 
 
-
+/* BOX */
+.box {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 15px;
+  width: 20%;
+}
 
 /* FOOTER */
 
 footer {
   background-color: violet;
+  position: relative;
+  margin-bottom: 0;
 }
