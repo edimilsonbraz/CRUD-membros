@@ -1,35 +1,25 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const server = express();
 
+
+
+// Parse Application - recebe dados do front-end(formulario)
+server.use(bodyParser.urlencoded({extended: false}));
+server.use(bodyParser.json());
+
+
+// ROTAS
 server.get("/", (req, res) => {
   res.sendFile(__dirname + '/index.html');
 })
 
-// CONEXAO COM DB
-const mysql = require('mysql');
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'form_membros'
-});
+server.post("/cad-membro", (req, res) => {
+  res.send("Nome: " + req.body.nome + "<br> Email: " + req.body.email + "<br>") 
+})
 
-connection.connect(function(err) {
-  if (err) {
-    console.error('Erro ao Conectar com DB: ' + err.stack);
-    return;
-  }
- 
-  console.log('Conectado com DB ' + connection.threadId);
-});connection.connect(function(err) {
-  if (err) {
-    console.error('error connecting: ' + err.stack);
-    return;
-  }
- 
-  console.log('connected as id ' + connection.threadId);
-});
+
 
 // PORTA ABERTA RODANDO
 server.listen(3000, () => console.log('Server rodando'))
