@@ -1,23 +1,28 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 const server = express();
+const routes = require('./routes');
 
+
+// Usando o template engine EJS
+server.set('view engine', 'ejs');
+// Mudando a localizacao da pasta wiews
+server.set('views', path.join(__dirname, 'views'))
 
 
 // Parse Application - recebe dados do front-end(formulario)
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(bodyParser.json());
 
+server.use(express.urlencoded({ extended: true}))
 
-// ROTAS
-server.get("/", (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-})
+// Habilita os arquivos statics
+server.use(express.static("public"))
 
-server.post("/cad-membro", (req, res) => {
-  res.send("Nome: " + req.body.nome + "<br> Email: " + req.body.email + "<br>") 
-})
+// Rotas
+server.use(routes)
+
 
 
 
