@@ -1,7 +1,7 @@
 // CONECAO COM O BANCO
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('form_membros', 'edimilson', '123456', {
+const sequelize = new Sequelize('form_membros', 'root', '', {
   host: 'localhost',
   dialect: 'mariadb'
 });
