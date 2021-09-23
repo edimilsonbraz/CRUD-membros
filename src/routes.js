@@ -10,7 +10,8 @@ const basePath = __dirname + '/views';
 routes.get("/", (req, res) => res.render('index'))
 routes.get("/membros", (req, res) =>  { 
   Addmembro.findAll().then((listMembros) => {
-    res.render('membros', {listMembros: listMembros })})
+    var id = req.params.id;
+    res.render('membros', {listMembros: id })})
   })
 
 

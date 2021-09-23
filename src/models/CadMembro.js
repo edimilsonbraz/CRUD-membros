@@ -1,5 +1,6 @@
 const db = require('../db');
 
+
 const AddMembro = db.sequelize.define('usuarios',{
   nome: {
     type: db.Sequelize.STRING
@@ -26,6 +27,8 @@ const AddMembro = db.sequelize.define('usuarios',{
     type: db.Sequelize.STRING
   }
 })
+
+
 
 module.exports = AddMembro;
 
