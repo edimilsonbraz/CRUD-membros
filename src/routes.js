@@ -1,19 +1,22 @@
 const express = require('express');
 const routes = express.Router();
-const addmembro = require('./models/CadMembro')
+const Addmembro = require('./models/CadMembro')
 
 
 const basePath = __dirname + '/views';
 
 
 // ROTAS
-routes.get("/", (req, res) => res.render(basePath + '/index'))
-routes.get("/membros", (req, res) => res.render(basePath + '/membros'))
+routes.get("/", (req, res) => res.render('index'))
+routes.get("/membros", (req, res) =>  { 
+  Addmembro.findAll().then((listMembros) => {
+    res.render('membros', {listMembros: listMembros })})
+  })
 
 
 //Dados vindo do Formulario
 routes.post("/membros", (req, res) => {
-  addmembro.create({
+  Addmembro.create({
     nome: req.body.nome,
     email: req.body.email,
     telefone: req.body.telefone,
@@ -27,7 +30,7 @@ routes.post("/membros", (req, res) => {
   }).catch((erro) => {
     res.send("Erro: Membro não pôde ser cadastrado!")
   })
-  // res.send("Nome: " + req.body.nome + "<br> Email: " + req.body.email + "<br> Telefone: " + req.body.telefone + "<br> Sexo: " + req.body.sexo + "<br> Data de Nascimento: " + req.body.data_nasc + "<br> Cidade: " + req.body.cidade + "<br> Estado: " + req.body.estado + "<br> Endereço: " + req.body.endereco + "<br>")
+  
 })
 
 module.exports = routes;
