@@ -5,6 +5,7 @@ const routes = require('./routes');
 const path = require('path');
 
 
+
 // Usando o template engine EJS
 server.set('view engine', 'ejs');
 // Mudando a localizacao da pasta wiews

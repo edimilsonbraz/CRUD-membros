@@ -13,9 +13,22 @@
     <img src="/images/back.svg" alt="voltar" onClick="history.go(-1)"> 
   </a> 
 
-<h1><%= dados.length %> </h1>
- <p><%= listMembros.nome %></p> 
- <p><%= listMembros.email %></p>   
- <p></p> <%= listMembros.telefone %>  
+  <p>
+    <% membro.forEach((membro) => {  %>
+      <span>ID: </span><%=membro.id %> <br>
+      <span>Nome:</span> <%=membro.nome%> <br>
+      <span>Email: </span><%=membro.email %><br>
+      <span>Telefone: </span><%=membro.telefone %><br>
+      <span>Genero: </span><%=membro.sexo %><br>
+      <span>DT-NaSC: </span><%=membro.data_nasc %><br>
+      <span>Cidade: </span><%=membro.cidade %><br>
+      <span>Estado: </span><%=membro.estado %><br>
+      <span>Endereco: </span><%=membro.endereco %><br>
+      <span>Criado em: </span><%=membro.createdAt.formatDate %><br> <hr> <br>
+
+    <% }) %> 
+  </p> 
+   
+
 </body>
 </html>

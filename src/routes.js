@@ -1,17 +1,17 @@
 const express = require('express');
 const routes = express.Router();
-const Addmembro = require('./models/CadMembro')
-
+const Addmembro = require('./models/CadMembro');
+const moment = require('moment');
 
 const basePath = __dirname + '/views';
 
 
 // ROTAS
 routes.get("/", (req, res) => res.render('index'))
+
 routes.get("/membros", (req, res) =>  { 
-  Addmembro.findAll().then((listMembros) => {
-    var id = req.params.id;
-    res.render('membros', {listMembros: id })})
+  Addmembro.findAll().then((membro) => {
+    res.render('membros', {membro: membro})})
   })
 
 
