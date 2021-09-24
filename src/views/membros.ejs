@@ -11,9 +11,8 @@
 
   <a href="#">
     <img src="/images/back.svg" alt="voltar" onClick="history.go(-1)"> 
-  </a> 
+  </a> <br><br><br><br>
 
-  <p>
     <% membro.forEach((membro) => {  %>
       <span>ID: </span><%=membro.id %> <br>
       <span>Nome:</span> <%=membro.nome%> <br>
@@ -24,11 +23,9 @@
       <span>Cidade: </span><%=membro.cidade %><br>
       <span>Estado: </span><%=membro.estado %><br>
       <span>Endereco: </span><%=membro.endereco %><br>
-      <span>Criado em: </span><%=membro.createdAt.formatDate %><br> <hr> <br>
-
+      <span>Criado em: </span><%=membro.createdAt %><br> 
+      <a href="/del-membro/<%=membro.id %>"><button>Apagar</button> </a><hr> <br>
     <% }) %> 
-  </p> 
-   
-
+ 
 </body>
 </html>
