@@ -2,8 +2,23 @@ const express = require('express');
 const routes = express.Router();
 const Addmembro = require('./models/CadMembro');
 const moment = require('moment');
+const session = require('express-session');
+const flash = require('connect-flash');
 
-const basePath = __dirname + '/views';
+// SESSÃO
+routes.use(session({
+  secret: 'membrossession',
+  resave: true,
+  saveUninitialized: true
+}));
+// O flash é uma área especial da sessão usada para armazenar mensagens.
+routes.use(flash())
+//Middleware
+routes.use((req, res, next) => {
+  res.locals.sucess_msg = req.flash("sucess_msg")
+  res.locals.error_msg = req.flash("error_msg")
+  next();
+})
 
 
 // ROTAS
@@ -34,13 +49,16 @@ routes.post("/membros", (req, res) => {
   })
 })
 
+//DELETAR MEMBRO
 routes.get('/del-membro/:id', (req, res) => {
   Addmembro.destroy({
     where: { 'id': req.params.id }
   }).then(() => {
+    req.flash('success_msg', "Membro apagado com sucesso")
     res.redirect('/membros')
   }).catch((erro) => {
-    res.send("Membro não pôde ser apagado.")
+    req.flash('error_msg', "Membro não pôde ser deletado")
+    //res.send("Membro não pôde ser apagado.")
   })
 })
 
