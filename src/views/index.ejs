@@ -11,13 +11,19 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/public/styles/messages.css">
   
   <title>CRUD | MEMBROS</title>
 
 </head>
 <body>
   <!-- INCLUDE -->
-  <%- include('partials/_msg', {title: 'Mensagem'}) %> 
+  <% if (success_msg) { %> 
+   <div class="messages success"><p><%= success_msg %></p></div>
+  <% } else if (error_msg) { %> 
+    <div class="messages error"><p><%= error_msg %></p></div> 
+  <% } %> 
+ 
   <header>
     <h3>Campus Samambaia</h3>
   </header>

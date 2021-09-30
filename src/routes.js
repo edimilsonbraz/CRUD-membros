@@ -5,17 +5,20 @@ const moment = require('moment');
 const session = require('express-session');
 const flash = require('connect-flash');
 
+
 // SESSÃO
 routes.use(session({
   secret: 'membrossession',
   resave: true,
   saveUninitialized: true
 }));
+
 // O flash é uma área especial da sessão usada para armazenar mensagens.
 routes.use(flash())
+  
 //Middleware
 routes.use((req, res, next) => {
-  res.locals.sucess_msg = req.flash("sucess_msg")
+  res.locals.success_msg = req.flash("success_msg")
   res.locals.error_msg = req.flash("error_msg")
   next();
 })
@@ -43,9 +46,10 @@ routes.post("/membros", (req, res) => {
     estado: req.body.estado,
     endereco: req.body.endereco
   }).then(() => {
+    req.flash('success_msg', "Membro Criado com sucesso!")
     res.redirect('/membros')
   }).catch((erro) => {
-    res.send("Erro: Membro não pôde ser cadastrado!")
+    res.flash('error_msg', "Membro não pôde ser cadastrado!")
   })
 })
 
