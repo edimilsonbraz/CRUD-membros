@@ -53,6 +53,50 @@ routes.post("/membros", (req, res) => {
   })
 })
 
+
+//Carrega Form EDITAR MEMBRO
+routes.get('/edit-membro/:id', (req, res) => {
+  Addmembro.findByPk(req.params.id)
+    .then(post => {
+      res.render('edit-membro', {
+        id: req.params.id,
+        nome: post.nome,
+        email: post.email,
+        telefone: post.telefone,
+        sexo: post.genero,
+        data_nasc: post.data_nascimento,
+        cidade: post.cidade,
+        estado: post.estado,
+        endereco: post.endereco
+      })
+    }).catch((erro) => {
+      req.flash("error_msg", "Erro: Membro não encontrado!")
+    })
+})
+
+//UPDATE NO BANCO MEMBRO
+routes.post('/update-membro/:id', (req, res) => {
+  Addmembro.update({
+    nome: req.body.nome,
+    email: req.body.email,
+    telefone: req.body.telefone,
+    sexo: req.body.sexo,
+    data_nasc: req.body.data_nasc,
+    cidade: req.body.cidade,
+    estado: req.body.estado,
+    endereco: req.body.endere
+  }, {
+    where: {id: req.params.id},
+  }).then(() => {
+    req.flash('success_msg', "Membro Editado com sucesso!")
+    res.redirect('/membros')
+  }).catch(erro => {
+    req.flash("error_msg", "Erro: Membro não pôde ser editado!") 
+  })
+})
+
+
+
 //DELETAR MEMBRO
 routes.get('/del-membro/:id', (req, res) => {
   Addmembro.destroy({

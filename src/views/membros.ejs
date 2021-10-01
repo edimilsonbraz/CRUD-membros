@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/public/styles/messages.css">
 
-  <title>Membros</title>
+  <title>Listar Membros</title>
 </head>
 <body>
   <!-- INCLUDE -->
@@ -28,12 +28,13 @@
       <span>Email: </span><%=membro.email %><br>
       <span>Telefone: </span><%=membro.telefone %><br>
       <span>Genero: </span><%=membro.sexo %><br>
-      <span>DT-NaSC: </span><%=membro.data_nasc %><br>
+      <span>Data Nasc: </span><%=membro.data_nasc %><br>
       <span>Cidade: </span><%=membro.cidade %><br>
       <span>Estado: </span><%=membro.estado %><br>
       <span>Endereco: </span><%=membro.endereco %><br>
       <span>Criado em: </span><%=membro.createdAt %><br> 
-      <a href="/del-membro/<%=membro.id %>"><button>Apagar</button> </a><hr> <br>
+      <a href="/del-membro/<%=membro.id %>"><button>Apagar</button></a>
+      <a href="/edit-membro/<%=membro.id %>"><button>Editar</button></a><hr> <br>
     <% }) %> 
  
 </body>
