@@ -74,6 +74,7 @@ routes.get('/edit-membro/:id', (req, res) => {
     })
 })
 
+
 //UPDATE NO BANCO MEMBRO
 routes.post('/update-membro/:id', (req, res) => {
   Addmembro.update({
@@ -95,6 +96,26 @@ routes.post('/update-membro/:id', (req, res) => {
   })
 })
 
+
+//VISUALIZAR MEMBRO
+routes.get('/vis-membro/:id', (req, res) => {
+  Addmembro.findByPk(req.params.id)
+    .then(post => {
+      res.render('vis-membro', {
+        id: req.params.id,
+        nome: post.nome,
+        email: post.email,
+        telefone: post.telefone,
+        sexo: post.genero,
+        data_nasc: post.data_nascimento,
+        cidade: post.cidade,
+        estado: post.estado,
+        endereco: post.endereco
+      })
+    }).catch((erro) => {
+      req.flash("error_msg", "Erro: Membro não encontrado!")
+    })
+})
 
 
 //DELETAR MEMBRO

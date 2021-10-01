@@ -16,11 +16,10 @@
      <div class="messages error"><p><%= error_msg %></p></div> 
    <% } %>  
 
-  <h1>Lista de Membros</h1> 
-
-  <a href="#">
-    <img src="/images/back.svg" alt="voltar" onClick="history.go(-1)"> 
-  </a> <br><br><br><br>
+  <h1>Lista de Membros</h1> <br>
+  
+  <a href="/"><button>Cadastrar</button></a> <hr>
+  
 
     <% membro.forEach((membro) => {  %>
       <span>ID: </span><%=membro.id %> <br>
@@ -33,6 +32,7 @@
       <span>Estado: </span><%=membro.estado %><br>
       <span>Endereco: </span><%=membro.endereco %><br>
       <span>Criado em: </span><%=membro.createdAt %><br> 
+      <a href="/vis-membro/<%=membro.id %>"><button>Visualizar</button></a>
       <a href="/del-membro/<%=membro.id %>"><button>Apagar</button></a>
       <a href="/edit-membro/<%=membro.id %>"><button>Editar</button></a><hr> <br>
     <% }) %> 
