@@ -4,70 +4,88 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- BOOSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <title>Editar Membros</title>
 </head>
 <body>
-  <h1>Editar Membros</h1> 
+  <div class="container">
+    <h1></h1>
+    <header>
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Editar Membros</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <a href="/vis-membro/<%=id%> ">
+            <button type="button" class="btn btn-sm btn-outline-info ">
+              Voltar
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>     
 
-  <a href="#">
-    <img src="/images/back.svg" alt="voltar" onClick="history.go(-1)"> 
-  </a> <br><br><br><br>
+    <form action="/update-membro/<%= id %>" method="POST">
+      <fieldset>
+        <legend><b>Atualize os campos abaixo</b></legend>
+        <br>
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label">Nome Completo</label>
+          <div class="col-sm-10">
+            <input type="text" value="<%= nome %> "name="nome" id="nome" class="form-control" placeholder="Nome completo" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" value="<%= email %>" class="form-control" name="email" id="email">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">telefone</label>
+          <input type="text" value="<%= telefone %>" class="form-control" name="telefone" id="telefone">
+        </div>
+        
+        <fieldset class="row mb-3 mt-4">
+          <legend class="col-form-label col-sm-2 pt-0 ">Sexo</legend>
+          <div class="col-sm-10 genero">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="genero" id="feminino" value="feminino">
+              <label class="form-check-label">Feminino</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="genero" id="masculino" value="masculino">
+              <label class="form-check-label">Masculino</label>
+            </div>
+          </div>
+        </fieldset>
+    
+        <div>
+          <label for="data_nascimento" class="data_nascimento"><b>Data de Nascimento</b></label>
+          <input type="date" name="data_nascimento" value="<%= data_nasc %>" class="inputUser" required>
+        </div>
 
-  <form action="/update-membro/<%= id %>" method="POST">
-    <fieldset>
-      <legend><b>Cadastro de Membros</b></legend>
-      <br>
-      <div class="inputBox">
-        <input type="text" name="nome" value="<%= nome %> " class="inputUser" required>
-        <label for="nome" class="labelInput">Nome Completo</label>
-      </div>
-  
-      <div class="inputBox">
-        <input type="text" name="email" value="<%= email %>" class="inputUser" required>
-        <label for="email" class="labelInput">Email</label>
-      </div>
-  
-      <div class="inputBox">
-        <input type="tel" name="telefone" value="<%= telefone %>"class="inputUser" required>
-        <label for="telefone" class="labelInput">Telefone</label>
-      </div>
-  
-      <div class="genero">
-        <p>Sexo:</p>
-        <input type="radio" name="genero" value="feminino" >
-        <label for="feminino">Feminino</label><br>
-  
-        <input type="radio" name="genero" value="masculino>
-        <label for="masculino">Masculino</label><br>
-  
-        <input type="radio" name="genero" value="outro" >
-        <label for="outro">Outro</label><br>
-      </div>
-      
-      <div>
-        <label for="data_nascimento" class="data_nascimento"><b>Data de Nascimento</b></label>
-        <input type="date" name="data_nascimento" value="<%= data_nasc %>" class="inputUser" required>
-      </div>
-  
-      <div class="inputBox">
-        <input type="text" name="cidade" value="<%= cidade %>" class="inputUser" required>
-        <label for="cidade" class="labelInput">Cidade</label>
-      </div>
-  
-      <div class="inputBox">
-        <input type="text" name="estado" value="<%= estado %>" class="inputUser" required>
-        <label for="estado" class="labelInput">Estado</label>
-      </div>
-  
-      <div class="inputBox">
-        <input type="text" name="endereco" value="<%= endereco %>" class="inputUser" required>
-        <label for="endereco" class="labelInput">Endereço</label>
-      </div>
-  
-      
-      <button type="submit">Editar</button>
-    </fieldset>
-  </form>
+        <div class="col-12">
+          <label class="form-label">Endereço</label>
+          <input type="text" value="<%= endereco %>" class="form-control" name="endereco" id="endereco" >
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Cidade</label>
+          <input type="text" value="<%= cidade %>" class="form-control" id="cidade" name="cidade">
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Estado</label>
+          <input type="text" value="<%= estado %>" class="form-control" id="estado" name="estado">
+        </div>
+        
+        <button type="submit" class="btn btn-outline-warning mt-4">Editar</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
