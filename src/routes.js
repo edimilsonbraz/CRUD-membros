@@ -5,7 +5,6 @@ const moment = require('moment');
 const session = require('express-session');
 const flash = require('connect-flash');
 
-
 // SESSÃO
 routes.use(session({
   secret: 'membrossession',
