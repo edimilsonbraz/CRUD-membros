@@ -25,6 +25,7 @@ routes.use((req, res, next) => {
 
 // ROTAS
 routes.get("/", (req, res) => res.render('index'))
+routes.get("/login", (req, res) => res.render('login'))
 
 // LIST MEMBRO
 routes.get("/membros", (req, res) =>  { 
