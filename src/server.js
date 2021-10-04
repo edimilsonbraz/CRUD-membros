@@ -16,7 +16,7 @@ server.use(bodyParser.urlencoded({extended: false}));
 server.use(bodyParser.json());
 
 // Habilita os arquivos statics
-server.use(express.static(path.join(__dirname, "public")))
+server.use('/public', express.static('public'));
 server.use(express.urlencoded({ extended: true}))
 
 // Rotas
