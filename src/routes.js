@@ -4,6 +4,7 @@ const Addmembro = require('./models/CadMembro');
 const moment = require('moment');
 const session = require('express-session');
 const flash = require('connect-flash');
+const date = require('./views/utils/formatDate')
 
 // SESSÃO
 routes.use(session({
@@ -85,7 +86,7 @@ routes.post('/update-membro/:id', (req, res) => {
     data_nasc: req.body.data_nasc,
     cidade: req.body.cidade,
     estado: req.body.estado,
-    endereco: req.body.endere
+    endereco: req.body.endereco
   }, {
     where: {id: req.params.id},
   }).then(() => {
@@ -99,15 +100,16 @@ routes.post('/update-membro/:id', (req, res) => {
 
 //VISUALIZAR MEMBRO
 routes.get('/vis-membro/:id', (req, res) => {
+  
   Addmembro.findByPk(req.params.id)
-    .then(post => {
+    .then(post => { 
       res.render('vis-membro', {
         id: req.params.id,
         nome: post.nome,
         email: post.email,
         telefone: post.telefone,
-        sexo: post.genero,
-        data_nasc: post.data_nascimento,
+        sexo: post.sexo,
+        data_nasc: post.data_nasc,
         cidade: post.cidade,
         estado: post.estado,
         endereco: post.endereco
