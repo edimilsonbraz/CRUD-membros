@@ -99,7 +99,6 @@
               <a href="/edit-membro/<%=membro.id %>"><button type="button" class="btn btn-sm btn-outline-warning ">Editar</button></a>
 
               <a href="/del-membro/<%=membro.id %>" data-bs-toggle="modal" data-bs-target="#apagarRegistro"><button type="button" class="btn btn-sm btn-outline-danger">Apagar</button></a>
-
             </td>
           </tr>
                       
@@ -119,8 +118,13 @@
             Tem certeza que deseja excluir o usuário selecionado ?
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Apagar</button>
+            <button type="button" class="btn btn-secondary" 
+            data-bs-dismiss="modal">Cancelar</button>
+            <% membro.forEach((membro) => {  %>
+              <a href="/del-membro/<%=membro.id%>">
+            <% }) %>
+              <button type="button" class="btn btn-primary">Apagar</button>
+            </a>
           </div>
         </div>
       </div>
