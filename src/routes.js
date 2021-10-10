@@ -83,7 +83,7 @@ routes.post('/update-membro/:id', (req, res) => {
     email: req.body.email,
     telefone: req.body.telefone,
     sexo: req.body.sexo,
-    data_nasc: req.body.data_nasc,
+    data_nasc: req.bodydata_nasc,
     cidade: req.body.cidade,
     estado: req.body.estado,
     endereco: req.body.endereco
@@ -99,6 +99,20 @@ routes.post('/update-membro/:id', (req, res) => {
 
 
 //VISUALIZAR MEMBRO
+function (timestamp) {
+  const date = new Date(timestamp) 
+
+    const year = date.getUTCFullYear()
+    const month = `0${date.getUTCMonth() + 1}`.slice(-2)
+    const day = `0${date.getUTCDate()}`.slice(-2)
+
+    return {
+      day,
+      month,
+      year,
+      format: `${day}/${month}/${year}`
+    }
+}
 routes.get('/vis-membro/:id', (req, res) => {
   
   Addmembro.findByPk(req.params.id)
